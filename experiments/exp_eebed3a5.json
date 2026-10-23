@@ -1,0 +1,563 @@
+{
+  "config": {
+    "experiment_id": "exp_eebed3a5",
+    "name": "DarwinLab Bin Packing Experiment",
+    "population_size": 10,
+    "generations": 3,
+    "mutation_rate": 0.25,
+    "crossover_rate": 0.7,
+    "elitism_count": 2,
+    "tournament_size": 3,
+    "random_seed": 42,
+    "train_instance_count": 5,
+    "validation_instance_count": 3,
+    "test_instance_count": 5,
+    "container_capacity": 100,
+    "item_count_min": 10,
+    "item_count_max": 15,
+    "instance_families": [
+      "uniform",
+      "small_heavy",
+      "large_heavy",
+      "mixed",
+      "tight_triplets"
+    ],
+    "complexity_weight": 2.0,
+    "invalid_penalty": 500.0,
+    "disable_crossover": false,
+    "disable_mutation": false,
+    "disable_diversity_preservation": false,
+    "early_stopping_patience": 8
+  },
+  "run_timestamp": "2026-10-23 17:04:05",
+  "total_experiment_duration_sec": 0.09,
+  "train_instance_count": 5,
+  "val_instance_count": 3,
+  "test_instance_count": 5,
+  "methods": {
+    "First Fit (FF)": {
+      "method_name": "First Fit (FF)",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.51,
+      "mean_runtime_ms": 0.102,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "Pack into first container with enough capacity.",
+      "heuristic_signature": null
+    },
+    "Best Fit (BF)": {
+      "method_name": "Best Fit (BF)",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.22,
+      "mean_runtime_ms": 0.043,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "Pack into container leaving least residual capacity.",
+      "heuristic_signature": null
+    },
+    "First Fit Decreasing (FFD)": {
+      "method_name": "First Fit Decreasing (FFD)",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.2,
+      "mean_runtime_ms": 0.04,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "Sort items descending, then apply First Fit.",
+      "heuristic_signature": null
+    },
+    "Best Fit Decreasing (BFD)": {
+      "method_name": "Best Fit Decreasing (BFD)",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.21,
+      "mean_runtime_ms": 0.042,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "Sort items descending, then apply Best Fit.",
+      "heuristic_signature": null
+    },
+    "Worst Fit (WF)": {
+      "method_name": "Worst Fit (WF)",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.19,
+      "mean_runtime_ms": 0.038,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "Pack into container leaving greatest residual capacity.",
+      "heuristic_signature": null
+    },
+    "DarwinLab Evolution": {
+      "method_name": "DarwinLab Evolution (Best Discovered)",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.2,
+      "mean_runtime_ms": 0.039,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "1. Ordering: Pre-sort all items in descending order of size (largest first).\n2. Placement: For each item, place into the first container with sufficient space, breaking ties by preferring the earliest opened container.\n4. Fallback: If no existing container can accommodate the item, open a new container.",
+      "heuristic_signature": "ord=descending|split=none|p=first_fit:lowest_index"
+    },
+    "Random Search": {
+      "method_name": "Random Search (Equal Budget)",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.42,
+      "mean_runtime_ms": 0.085,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "1. Ordering: Pre-sort all items in descending order of size (largest first).\n2. Placement: For each item, place into the feasible container with the second most leftover space, breaking ties by preferring the container containing the fewest items.\n4. Fallback: If no existing container can accommodate the item, open a new container.",
+      "heuristic_signature": "ord=descending|split=none|p=almost_worst_fit:least_items"
+    }
+  },
+  "evolution_best_train_fitness": 99.9,
+  "evolution_generations_completed": 3,
+  "evolution_history": [
+    {
+      "generation": 0,
+      "best_fitness": 99.9,
+      "mean_fitness": 97.834,
+      "best_containers": 6.0,
+      "best_quality": 1.0,
+      "best_candidate_id": "cand_493f44bb",
+      "diversity_score": 1.0,
+      "mutation_count": 0,
+      "crossover_count": 0,
+      "elapsed_time_sec": 0.0,
+      "validation_quality": 1.0,
+      "validation_containers": 5.333
+    },
+    {
+      "generation": 1,
+      "best_fitness": 99.9,
+      "mean_fitness": 99.387,
+      "best_containers": 6.0,
+      "best_quality": 1.0,
+      "best_candidate_id": "cand_493f44bb",
+      "diversity_score": 0.7,
+      "mutation_count": 6,
+      "crossover_count": 6,
+      "elapsed_time_sec": 0.004,
+      "validation_quality": 1.0,
+      "validation_containers": 5.333
+    },
+    {
+      "generation": 2,
+      "best_fitness": 99.9,
+      "mean_fitness": 99.317,
+      "best_containers": 6.0,
+      "best_quality": 1.0,
+      "best_candidate_id": "cand_493f44bb",
+      "diversity_score": 0.8,
+      "mutation_count": 8,
+      "crossover_count": 8,
+      "elapsed_time_sec": 0.003,
+      "validation_quality": 1.0,
+      "validation_containers": 5.333
+    },
+    {
+      "generation": 3,
+      "best_fitness": 99.9,
+      "mean_fitness": 99.033,
+      "best_containers": 6.0,
+      "best_quality": 1.0,
+      "best_candidate_id": "cand_493f44bb",
+      "diversity_score": 0.7,
+      "mutation_count": 8,
+      "crossover_count": 8,
+      "elapsed_time_sec": 0.004,
+      "validation_quality": 1.0,
+      "validation_containers": 5.333
+    }
+  ],
+  "random_search_evaluations": 40,
+  "random_search_best_train_fitness": 99.7,
+  "ablations": {
+    "Ablation: No Crossover": {
+      "method_name": "Ablation: No Crossover",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.29,
+      "mean_runtime_ms": 0.057,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "1. Ordering: Pre-sort all items in descending order of size (largest first).\n2. Placement: For each item, place into the first container with sufficient space, breaking ties by preferring the earliest opened container.\n4. Fallback: If no existing container can accommodate the item, open a new container.",
+      "heuristic_signature": "ord=descending|split=none|p=first_fit:lowest_index"
+    },
+    "Ablation: No Mutation": {
+      "method_name": "Ablation: No Mutation",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.4,
+      "mean_runtime_ms": 0.079,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "1. Ordering: Pre-sort all items in descending order of size (largest first).\n2. Placement: For each item, place into the first container with sufficient space, breaking ties by preferring the earliest opened container.\n4. Fallback: If no existing container can accommodate the item, open a new container.",
+      "heuristic_signature": "ord=descending|split=none|p=first_fit:lowest_index"
+    },
+    "Ablation: No Diversity Preservation": {
+      "method_name": "Ablation: No Diversity Preservation",
+      "evaluated_instances": 5,
+      "mean_containers": 7.0,
+      "std_containers": 3.391,
+      "mean_quality": 1.0,
+      "mean_lower_bound_gap": 0.04,
+      "mean_optimality_gap": 0.0,
+      "optimum_known_count": 5,
+      "total_runtime_ms": 0.18,
+      "mean_runtime_ms": 0.036,
+      "family_breakdown": {
+        "uniform": {
+          "mean_containers": 11.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "small_heavy": {
+          "mean_containers": 3.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "large_heavy": {
+          "mean_containers": 10.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "mixed": {
+          "mean_containers": 5.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.0,
+          "count": 1.0
+        },
+        "tight_triplets": {
+          "mean_containers": 6.0,
+          "mean_quality": 1.0,
+          "mean_lower_bound_gap": 0.2,
+          "count": 1.0
+        }
+      },
+      "candidate_description": "1. Ordering: Pre-sort all items in descending order of size (largest first).\n2. Placement: For each item, place into the first container with sufficient space, breaking ties by preferring the earliest opened container.\n4. Fallback: If no existing container can accommodate the item, open a new container.",
+      "heuristic_signature": "ord=descending|split=none|p=first_fit:lowest_index"
+    }
+  }
+}
